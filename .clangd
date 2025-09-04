@@ -1,0 +1,41 @@
+CompileFlags:
+  CompilationDatabase: .
+  Add:
+    - --target=xtensa-esp32-elf
+    - -DESP_PLATFORM
+    - -DIDF_VER="v5.0"
+    - --sysroot=/Users/ottarfinnsson/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf
+    - -I/Users/ottarfinnsson/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include
+    - -I/Users/ottarfinnsson/esp/esp-idf/components/esp_common/include
+    - -I/Users/ottarfinnsson/esp/esp-idf/components/xtensa/include
+    - -I/Users/ottarfinnsson/esp/esp-idf/components/xtensa/esp32/include
+    - -I/Users/ottarfinnsson/esp/esp-idf/components/newlib/platform_include
+    - -I/Users/ottarfinnsson/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/xtensa-esp-elf/include
+  Remove:
+    - -mlongcalls
+    - -fno-shrink-wrap
+    - -fno-tree-switch-conversion
+    - -mfix-esp32-psram-cache-issue
+    - -mfix-esp32-psram-cache-strategy=*
+    - -fstrict-volatile-bitfields
+    - -Wno-frame-address
+    - -ffunction-sections
+    - -fdata-sections
+    - -Wall
+    - -Werror=all
+    - -Wno-error=unused-function
+    - -Wno-error=unused-variable
+    - -Wno-error=deprecated-declarations
+    - -Wextra
+    - -Wno-unused-parameter
+
+Diagnostics:
+  UnusedIncludes: None
+  MissingIncludes: None
+  Suppress:
+    - drv_unknown_argument
+    - drv_unknown_argument_with_suggestion
+    - pp_hash_error
+    - fatal_too_many_errors
+    - note_previous_decl
+    - unknown_typename
