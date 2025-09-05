@@ -18,15 +18,15 @@ const char* ERROR_COMMAND = "Command error";
 const char* ERROR_ARGUMENT = "Argument error";
 
 void app_main(void) {
-  char msg_in[MSG_BUFFER_LENGTH];
+  char msg_in[MSG_BUFFER_LENGTH];  // Initialize buffers
   char msg_out[MSG_BUFFER_LENGTH];
 
   serial_write_line(MESSAGE_SYNC);
   while (true) {
-    memset(msg_in, 0, MSG_BUFFER_LENGTH);
+    memset(msg_in, 0, MSG_BUFFER_LENGTH);  // Clear buffers with memset
     memset(msg_out, 0, MSG_BUFFER_LENGTH);
 
-    serial_write_prompt();
+    serial_write_prompt();  // Writes prompt string > to the serial output
     int count = serial_read_line(msg_in);
     if (count < 0) {
       serial_write_line(ERROR_OVERRUN);
