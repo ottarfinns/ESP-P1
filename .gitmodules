@@ -1,3 +1,0 @@
-[submodule "components/serial"]
-	path = components/serial
-	url = https://iot.rhi.hi.is/git/TOL103M/serial.git
